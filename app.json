@@ -1,12 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/about/about"
+    "pages/record/record",
+    "pages/comm/comm",
+    "pages/my/my",
+    "pages/software_timing/software_timing",
+    "pages/hardware_timing/hardware_timing"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "一个奇奇怪怪的小程序",
+    "navigationBarTitleText": "魔方计时器",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -16,8 +20,16 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/about/about",
-        "text": "关于"
+        "pagePath": "pages/record/record",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/comm/comm",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的"
       }
     ]
   },

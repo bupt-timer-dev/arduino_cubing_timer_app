@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  <text style="font-size:100rpx;">
-   {{timeStr}}
+  <text style="font-size:50rpx;margin-top: 30rpx; margin-bottom: 30rpx;">
+    设备未连接
   </text>
-  <button type="primary" bindtap="toggle">{{buttonText}}</button>
-  <button type="default" bindtap="reset">重置</button>
+  <button type="primary" bindtap="go_software">进入计时</button>
+  <button type="default" bindtap="connect">连接设备</button>
 </view>
