@@ -3,9 +3,7 @@
     "pages/index/index",
     "pages/record/record",
     "pages/comm/comm",
-    "pages/my/my",
-    "pages/software_timing/software_timing",
-    "pages/hardware_timing/hardware_timing"
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",

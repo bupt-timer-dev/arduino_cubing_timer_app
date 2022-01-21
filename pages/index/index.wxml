@@ -1,8 +1,18 @@
 <!--index.wxml-->
-<view class="container">
-  <text style="font-size:50rpx;margin-top: 30rpx; margin-bottom: 30rpx;">
-    设备未连接
-  </text>
-  <button type="primary" bindtap="go_software">进入计时</button>
-  <button type="default" bindtap="connect">连接设备</button>
+<view class="container" bindtap="toggle">
+  <view class="header">
+    <button class="header-item" catchtap="void()">
+      <text class="header-item-title">魔方类型</text>
+      <text class="header-item-content">三阶魔方</text>
+    </button>
+    <button class="header-item" catchtap="void()">
+      <text class="header-item-title">计时方式</text>
+      <text class="header-item-content">软件计时</text>
+    </button>
+  </view>
+  <view class="main-body">
+    <text style="font-size:100rpx;">{{timeStr}}</text>
+    <text style="font-size:60rpx;">{{buttonText}}</text>
+    <button catchtap="reset">重置</button>
+  </view>
 </view>

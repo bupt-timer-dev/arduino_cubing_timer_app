@@ -1,8 +1,0 @@
-<!--pages/software_timing/software_timing.wxml-->
-<view class="container">
-  <text style="font-size:100rpx;">
-   {{timeStr}}
-  </text>
-  <button type="primary" bindtap="toggle">{{buttonText}}</button>
-  <button type="default" bindtap="reset">重置</button>
-</view>
