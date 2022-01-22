@@ -12,7 +12,7 @@
   </view>
   <view class="main-body">
     <view class="time-digits">{{timeStr}}</view>
-    <view class="hint">{{state=='run'?'轻触暂停':'轻触开始'}}</view>
+    <view class="hint">{{state=='run'?'轻触停止':'轻触开始'}}</view>
     <view class="button-list">
       <button catchtap="resume" wx:if="{{state=='stop'}}">继续计时</button>
       <button type="warn" catchtap="deleteRecord" wx:if="{{state=='stop'}}">删除记录</button>

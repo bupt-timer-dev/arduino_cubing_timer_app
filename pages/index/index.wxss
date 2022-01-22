@@ -36,15 +36,15 @@
 }
 
 .time-digits {
-  margin-top: 35%;
+  margin-top: 40%;
   text-align: center;
-  font-size: 250%;
+  font-size: 300%;
 }
 
 .hint {
   margin-top: 6%;
   text-align: center;
-  font-size: 135%;
+  font-size: 150%;
 }
 
 .button-list {
