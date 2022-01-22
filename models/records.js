@@ -10,9 +10,8 @@ let records = {
   cache: null,
   loadSync() {
     const info = wx.getStorageInfoSync();
-    if ("records" in info.keys) {
-      const data = wx.getStorageSync("records");
-      records.cache = JSON.parse(data);
+    if (info.keys.includes("records")) {
+      records.cache = wx.getStorageSync("records");
     } else {
       wx.setStorageSync("records", []);
       records.cache = [];
