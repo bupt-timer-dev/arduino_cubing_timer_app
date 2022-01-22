@@ -1,2 +1,16 @@
-<!--pages/record/record.wxml-->
-<text>pages/record/record.wxml</text>
+<scroll-view scroll-y="true">
+  <view wx:for="{{records}}" class="list-item">
+    <view class="item-time">
+      {{item.time}}
+    </view>
+    <view class="item-info">
+      <view class="item-info-upper">
+        {{item.type}}
+        {{item.method}}
+      </view>
+      <view class="item-info-lower">
+        {{item.startTime}}
+      </view>
+    </view>
+  </view>
+</scroll-view>

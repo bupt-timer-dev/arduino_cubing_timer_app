@@ -1,3 +1,7 @@
+const records = require("../../models/records")
+const defs = require("../../models/defs")
+const util = require("../../utils/util");
+
 // pages/record/record.js
 Page({
 
@@ -5,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    records: []
   },
 
   /**
@@ -26,7 +30,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      records: records.cache.map((i) => {
+        return {
+          type: defs.typeName[i.type],
+          method: defs.methodName[i.method],
+          time: util.msToStr(i.time),
+          startTime: util.formatTime(new Date(i.startTime))
+        }
+      })
+    })
   },
 
   /**

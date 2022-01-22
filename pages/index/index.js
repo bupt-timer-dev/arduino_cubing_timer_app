@@ -1,16 +1,8 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-const records = require("../../models/records.js")
-
-function msToStr(ms) {
-  let minute = Math.floor(ms / 60000)
-  ms = ms % 60000
-  let str = (ms / 1000).toFixed(3)
-  if (ms < 10000) str = "0" + str
-  if (minute > 0) str = minute + ":" + str
-  return str
-}
+const records = require("../../models/records")
+const util = require("../../utils/util")
 Page({
   millisecond: 0,
   lastTime: null,
@@ -77,7 +69,7 @@ Page({
     this.millisecond += Date.now() - this.lastTime;
     this.lastTime = Date.now();
     this.setData({
-      timeStr: msToStr(this.millisecond)
+      timeStr: util.msToStr(this.millisecond)
     })
   }
 })
