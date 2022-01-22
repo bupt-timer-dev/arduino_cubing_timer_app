@@ -5,6 +5,7 @@
   margin: 5px;
   padding: 5px;
   background-color: rgb(233, 233, 233);
+  border-radius: 5px;
 }
 
 .item-time {
@@ -24,5 +25,5 @@
 }
 
 .item-info-lower {
-  font-size: 90%;
+  font-size: 80%;
 }
