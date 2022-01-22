@@ -38,7 +38,7 @@ Page({
           time: util.msToStr(i.time),
           startTime: util.formatTime(new Date(i.startTime))
         }
-      })
+      }).reverse()
     })
   },
 
