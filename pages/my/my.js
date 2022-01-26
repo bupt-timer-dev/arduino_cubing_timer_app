@@ -7,7 +7,18 @@ Page({
   data: {
 
   },
-
+  clearStorage() {
+    wx.showModal({
+      title: '清除存储数据',
+      content: '真的要清除全部存储数据吗？',
+      confirmColor: "#FF0000",
+      success(res) {
+        if (res.confirm) {
+          wx.clearStorageSync();
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
