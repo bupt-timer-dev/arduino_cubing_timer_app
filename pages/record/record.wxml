@@ -1,7 +1,7 @@
 <scroll-view scroll-y="true">
   <view wx:for="{{records}}" class="list-item">
     <view class="item-time">
-      {{item.time}}
+      {{item.time}} <text class="tag">{{item.tag}}</text>
     </view>
     <view class="item-info">
       <view class="item-info-upper">

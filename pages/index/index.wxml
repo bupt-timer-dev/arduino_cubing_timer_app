@@ -11,11 +11,20 @@
     </button>
   </view>
   <view class="main-body">
-    <view class="time-digits">{{timeStr}}</view>
+    <view class="time-digits">
+      {{timeStr}} <text class="tag">{{tag}}</text>
+    </view>
     <view class="hint">{{state=='run'?'轻触停止':'轻触开始'}}</view>
     <view class="button-list">
-      <button catchtap="resume" wx:if="{{state=='stop'}}">继续计时</button>
-      <button type="warn" catchtap="deleteRecord" wx:if="{{state=='stop'}}">删除记录</button>
+      <block wx:if="{{state=='stop'}}">
+        <button catchtap="resume">继续</button>
+        <button catchtap="addDnf">DNF</button>
+        <button catchtap="addPlus2">+2</button>
+      </block>
+      <button wx:if="{{state=='tagged'}}" catchtap="cancel_edit">←</button>
+      <button wx:if="{{state=='stop'||state=='tagged'}}" catchtap="deleteRecord">
+        <icon type="cancel" size="1rem"></icon>
+      </button>
     </view>
   </view>
 </view>

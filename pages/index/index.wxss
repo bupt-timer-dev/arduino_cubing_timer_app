@@ -35,6 +35,12 @@
   height: 100%;
 }
 
+.tag {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+}
+
 .time-digits {
   margin-top: calc(50vh - 2.5em);
   text-align: center;
@@ -50,11 +56,16 @@
 .button-list {
   margin-top: 2vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-button {
-  margin: 3px;
+.button-list>button {
+  margin: 5px !important;
+  padding: 0.5em;
+  width: 4em;
+  font-weight: normal;
+  font-size: 80%;
+  display: flex;
+  flex-direction: column;
 }
