@@ -86,8 +86,19 @@ Page({
     this.startTicking();
   },
   deleteRecord() {
-    records.pop();
-    this.reset();
+    let self = this;
+    wx.showModal({
+      title: '删除记录',
+      content: '确认删除这条记录？',
+      confirmColor: "#FF0000",
+      success(res) {
+        if (res.confirm) {
+          records.pop();
+          self.reset();
+        }
+      }
+    })
+
   },
   startTicking() {
     this.lastTime = Date.now();

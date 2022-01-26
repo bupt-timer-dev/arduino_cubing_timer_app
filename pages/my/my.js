@@ -1,4 +1,5 @@
 // pages/my/my.js
+const records = require("../../models/records")
 Page({
 
   /**
@@ -15,6 +16,7 @@ Page({
       success(res) {
         if (res.confirm) {
           wx.clearStorageSync();
+          records.cache = []
         }
       }
     })
