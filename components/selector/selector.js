@@ -56,13 +56,22 @@ Component({
       wx.showTabBar();
     }
   },
-  lifetimes: {
-    attached() {
-      const data = wx.getStorageSync("preference");
-      this.setData({
-        typeIndex: data.typeIndex,
-        methodIndex: data.methodIndex,
-      })
+  pageLifetimes: {
+    show() {
+      const info = wx.getStorageInfoSync();
+      if (info.keys.includes("preference")) {
+        const data = wx.getStorageSync("preference");
+        this.setData({
+          typeIndex: data.typeIndex,
+          methodIndex: data.methodIndex,
+        })
+      } else {
+        this.setData({
+          typeIndex: 1,
+          methodIndex: 0
+        })
+        this.saveChange();
+      }
       this.triggerChange();
     }
   }
