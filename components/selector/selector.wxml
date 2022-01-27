@@ -8,7 +8,7 @@
     <text class="item-content">软件计时</text>
   </button>
 </view>
-<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround">
+<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround" bindleave="leaveDrawer">
   <view class="type-selector">
     <button wx:for="{{typeRange}}" id="{{index}}" bindtap="selectType">
       {{item}}

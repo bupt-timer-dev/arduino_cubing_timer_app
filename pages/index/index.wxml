@@ -19,7 +19,7 @@
     </view>
   </view>
 </view>
-<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround">
+<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround" bindleave="">
   <view class="type-selector">
     <button wx:for="{{typeRange}}" id="{{index}}" bindtap="selectType">
       {{item}}

@@ -50,6 +50,10 @@ Component({
       this.setData({
         showTypeSelector: true
       })
+      wx.hideTabBar();
+    },
+    leaveDrawer() {
+      wx.showTabBar();
     }
   },
   lifetimes: {
