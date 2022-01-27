@@ -17,7 +17,6 @@ Page({
   selectorChange(e) {
     this.typeIndex = e.detail.typeIndex;
     this.methodIndex = e.detail.methodIndex;
-    console.log(e);
     this.reset();
   },
   addDnf() {

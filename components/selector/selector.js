@@ -5,14 +5,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    typeIndex: {
-      type: Number,
-      value: 1
-    },
-    methodIndex: {
-      type: Number,
-      value: 0
-    },
     disabled: {
       type: Boolean,
       value: false
@@ -24,7 +16,9 @@ Component({
    */
   data: {
     typeRange: defs.typeName,
+    typeIndex: 1,
     showTypeSelector: false,
+    methodIndex: 0,
     methodRange: defs.methodName,
   },
 
@@ -37,7 +31,14 @@ Component({
         showTypeSelector: false,
         typeIndex: e.target.id
       })
+      this.saveChange();
       this.triggerChange();
+    },
+    saveChange() {
+      wx.setStorageSync("preference", {
+        typeIndex: this.data.typeIndex,
+        methodIndex: this.data.methodIndex,
+      })
     },
     triggerChange() {
       this.triggerEvent("change", {
@@ -53,6 +54,11 @@ Component({
   },
   lifetimes: {
     attached() {
+      const data = wx.getStorageSync("preference");
+      this.setData({
+        typeIndex: data.typeIndex,
+        methodIndex: data.methodIndex,
+      })
       this.triggerChange();
     }
   }
