@@ -16,7 +16,7 @@ let preference = {
       return def
     }
   },
-  save() {
+  save(data) {
     wx.setStorageSync("preference", data);
   }
 }
