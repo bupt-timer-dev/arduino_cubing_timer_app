@@ -111,16 +111,18 @@ Page({
     wx.setKeepScreenOn({
       keepScreenOn: true
     })
+    wx.hideTabBar();
     this.lastTime = Date.now();
     this.intervalHandle = setInterval(this.tick, 11);
   },
   stopTicking() {
-    this.tick()
+    this.tick();
     clearInterval(this.intervalHandle);
     this.intervalHandle = null;
     wx.setKeepScreenOn({
       keepScreenOn: false
     })
+    wx.showTabBar();
   },
   reset() {
     this.millisecond = 0;

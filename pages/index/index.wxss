@@ -17,19 +17,19 @@
 }
 
 .time-digits {
-  margin-top: calc(50vh - 2.5em);
+  margin-top: 50%;
   text-align: center;
   font-size: 320%;
 }
 
 .hint {
-  margin-top: 2vh;
+  margin-top: 2px;
   text-align: center;
   font-size: 120%;
 }
 
 .button-list {
-  margin-top: 2vh;
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
