@@ -3,17 +3,16 @@
   <titled-button title="魔方类型" text="{{typeRange[typeIndex]}}" disabled="{{disabled}}" catchtap="tapTypeButton"></titled-button>
 </view>
 <scroll-view scroll-y="true">
-  <view wx:for="{{records}}" class="list-item">
-    <view class="item-time">
-      {{item.time}} <text class="tag">{{item.tag}}</text>
-    </view>
-    <view class="item-info">
-      <view class="item-info-upper">
-        {{item.type}}
+  <view class="list">
+    <view wx:for="{{records}}" class="list-item">
+      <view class="item-start-time">
+        {{item.startTime}}
+      </view>
+      <view class="item-method">
         {{item.method}}
       </view>
-      <view class="item-info-lower">
-        {{item.startTime}}
+      <view class="item-time">
+        {{item.time}} <text class="tag">{{item.tag}}</text>
       </view>
     </view>
   </view>

@@ -4,37 +4,37 @@
   margin: 5px;
 }
 
-.list-item {
+.list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 0px 5px;
+}
+
+.list-item {
   margin: 5px;
   padding: 5px;
+  width: calc(33.3% - 20px);
   background-color: rgb(233, 233, 233);
   border-radius: 5px;
 }
 
 .item-time {
-  flex: 1;
-  font-size: 160%;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 .tag {
   color: red;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 0.8rem;
 }
 
-.item-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.item-method {
+  font-size: 0.8rem;
+  float: right;
 }
 
-.item-info-upper {
-  font-size: 90%;
-}
-
-.item-info-lower {
-  font-size: 80%;
+.item-start-time {
+  font-size: 0.8rem;
+  float: left;
 }

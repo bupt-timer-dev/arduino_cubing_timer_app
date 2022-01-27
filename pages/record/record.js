@@ -31,7 +31,7 @@ Page({
         type: defs.typeName[i.type],
         method: defs.methodName[i.method],
         time: util.msToStr(i.time),
-        startTime: util.formatTime(new Date(i.startTime)),
+        startTime: util.formatShortTime(new Date(i.startTime)),
         tag: defs.tagName[i.tag]
       })).reverse()
     })

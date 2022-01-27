@@ -9,6 +9,13 @@ const formatTime = date => {
   return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
 }
 
+const formatShortTime = date => {
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return month + '/' + day;
+}
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : `0${n}`
@@ -24,5 +31,6 @@ function msToStr(ms) {
 }
 module.exports = {
   formatTime,
+  formatShortTime,
   msToStr
 }
