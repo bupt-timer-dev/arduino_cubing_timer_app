@@ -30,6 +30,7 @@ Page({
       typeIndex: e.detail.index
     })
     this.savePreference();
+    this.reset();
   },
   savePreference() {
     preference.save({
@@ -41,11 +42,6 @@ Page({
     this.setData({
       showTypeSelector: true
     })
-  },
-  selectorChange(e) {
-    this.typeIndex = e.detail.typeIndex;
-    this.methodIndex = e.detail.methodIndex;
-    this.reset();
   },
   addDnf() {
     records.pop();
