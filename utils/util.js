@@ -26,8 +26,8 @@ function msToStr(ms) {
   ms = ms % 60000
   let str = (ms / 1000).toFixed(3)
   if (minute > 0) {
-    str = minute + ":" + str
     if (ms < 10000) str = "0" + str
+    str = minute + ":" + str
   }
   return str
 }
@@ -37,8 +37,8 @@ function msToStrInt(ms) {
   ms = ms % 60000
   let str = Math.floor(ms / 1000)
   if (minute > 0) {
-    str = minute + ":" + str
     if (ms < 10000) str = "0" + str
+    str = minute + ":" + str
   }
   return str
 }
