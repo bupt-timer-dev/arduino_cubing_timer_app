@@ -1,0 +1,4 @@
+<button class="item" disabled="{{disabled}}">
+  <text class="item-title">{{title}}</text>
+  <text class="item-content">{{text}}</text>
+</button>

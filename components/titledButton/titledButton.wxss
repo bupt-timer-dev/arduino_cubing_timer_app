@@ -1,0 +1,17 @@
+.item {
+  margin: 5px !important;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 10px;
+}
+
+.item-title {
+  font-size: 60%;
+  font-weight: 500;
+}
+
+.item-content {
+  font-weight: 500;
+}

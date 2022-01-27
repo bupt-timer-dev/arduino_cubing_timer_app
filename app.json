@@ -6,6 +6,7 @@
     "pages/my/my"
   ],
   "usingComponents": {
+    "titled-button": "components/titledButton/titledButton",
     "selector": "components/selector/selector"
   },
   "window": {

@@ -1,6 +1,10 @@
 <!--index.wxml-->
+<selector show="{{showTypeSelector}}" bindselect="selectType"></selector>
 <view class="container" bindtap="toggle">
-  <selector bindchange="selectorChange" catchtap="void" disabled="{{state=='run'}}"></selector>
+  <view class="header">
+    <titled-button title="魔方类型" text="{{typeRange[typeIndex]}}" disabled="{{disabled}}" catchtap="tapTypeButton"></titled-button>
+    <titled-button title="计时方式" text="{{methodRange[methodIndex]}}" disabled="{{disabled}}" catchtap="void"></titled-button>
+  </view>
   <view class="main-body">
     <view class="time-digits">
       {{timeStr}} <text class="tag">{{tag}}</text>

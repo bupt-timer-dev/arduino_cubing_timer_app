@@ -5,21 +5,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    disabled: {
-      type: Boolean,
-      value: false
-    }
+    show: Boolean
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    typeRange: defs.typeName,
-    typeIndex: 1,
-    showTypeSelector: false,
-    methodIndex: 0,
-    methodRange: defs.methodName,
+    range: defs.typeName
   },
 
   /**
@@ -28,22 +21,10 @@ Component({
   methods: {
     selectType(e) {
       this.setData({
-        showTypeSelector: false,
-        typeIndex: e.target.id
+        show: false,
       })
-      this.saveChange();
-      this.triggerChange();
-    },
-    saveChange() {
-      wx.setStorageSync("preference", {
-        typeIndex: this.data.typeIndex,
-        methodIndex: this.data.methodIndex,
-      })
-    },
-    triggerChange() {
-      this.triggerEvent("change", {
-        typeIndex: this.data.typeIndex,
-        methodIndex: this.data.methodIndex,
+      this.triggerEvent("select", {
+        index: e.target.id,
       })
     },
     tapType() {
@@ -54,25 +35,6 @@ Component({
     },
     leaveDrawer() {
       wx.showTabBar();
-    }
-  },
-  pageLifetimes: {
-    show() {
-      const info = wx.getStorageInfoSync();
-      if (info.keys.includes("preference")) {
-        const data = wx.getStorageSync("preference");
-        this.setData({
-          typeIndex: data.typeIndex,
-          methodIndex: data.methodIndex,
-        })
-      } else {
-        this.setData({
-          typeIndex: 1,
-          methodIndex: 0
-        })
-        this.saveChange();
-      }
-      this.triggerChange();
     }
   }
 })

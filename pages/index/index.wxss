@@ -1,4 +1,9 @@
 /**index.wxss**/
+.header {
+  display: flex;
+  margin: 5px;
+}
+
 .container {
   display: flex;
   flex-direction: column;

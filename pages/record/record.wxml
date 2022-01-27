@@ -1,3 +1,4 @@
+<selector bindchange="selectorChange" catchtap="void" disabled="{{state=='run'}}"></selector>
 <scroll-view scroll-y="true">
   <view wx:for="{{records}}" class="list-item">
     <view class="item-time">

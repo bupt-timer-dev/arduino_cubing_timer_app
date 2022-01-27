@@ -3,16 +3,44 @@
 const app = getApp()
 const defs = require("../../models/defs");
 const records = require("../../models/records")
+const preference = require("../../models/preference")
 const util = require("../../utils/util")
 Page({
   millisecond: 0,
   lastTime: null,
-  typeIndex: null,
-  methodIndex: null,
   data: {
     state: "init", // init/run/stop/tagged
     timeStr: "00.000",
-    tag: ""
+    tag: "",
+    typeRange: defs.typeName,
+    typeIndex: 1,
+    showTypeSelector: false,
+    methodIndex: 0,
+    methodRange: defs.methodName
+  },
+  onShow() {
+    let data = preference.load();
+    this.setData({
+      typeIndex: data.index,
+      methodIndex: data.method
+    })
+  },
+  selectType(e) {
+    this.setData({
+      typeIndex: e.detail.index
+    })
+    this.savePreference();
+  },
+  savePreference() {
+    preference.save({
+      type: this.data.typeIndex,
+      method: this.data.methodIndex
+    })
+  },
+  tapTypeButton() {
+    this.setData({
+      showTypeSelector: true
+    })
   },
   selectorChange(e) {
     this.typeIndex = e.detail.typeIndex;
@@ -65,8 +93,8 @@ Page({
   },
   start() {
     this.currentRecord = {
-      type: this.typeIndex,
-      method: 0,
+      type: this.data.typeIndex,
+      method: this.data.methodIndex,
       startTime: Date.now(),
       tag: 0
     }
