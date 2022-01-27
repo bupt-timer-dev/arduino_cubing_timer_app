@@ -24,9 +24,14 @@
   text-align: center;
 }
 
+.time-dot {
+  font-size: 80%;
+}
+
 .tag {
   color: red;
   font-size: 0.8rem;
+  margin-left: 0px;
 }
 
 .item-method {

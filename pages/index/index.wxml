@@ -7,7 +7,8 @@
   </view>
   <view class="main-body">
     <view class="time-digits">
-      {{timeStr}} <text class="tag">{{tag}}</text>
+      {{timeStrInt}}.<text class="time-dot">{{timeStrDot}}</text>
+      <text class="tag">{{tag}}</text>
     </view>
     <view class="hint">{{state=='run'?'轻触停止':'轻触开始'}}</view>
     <view class="button-list">

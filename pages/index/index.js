@@ -10,7 +10,8 @@ Page({
   lastTime: null,
   data: {
     state: "init", // init/run/stop/tagged
-    timeStr: "00.000",
+    timeStrInt: "0",
+    timeStrDot: "000",
     tag: "",
     typeRange: defs.typeName,
     typeIndex: 1,
@@ -59,7 +60,7 @@ Page({
     records.push(this.currentRecord);
     this.millisecond += 2000;
     this.setData({
-      timeStr: util.msToStr(this.millisecond),
+      timeStrInt: util.msToStrInt(this.millisecond),
       state: "tagged",
       tag: defs.tagName[2]
     })
@@ -70,7 +71,7 @@ Page({
       this.currentRecord.time -= 2000;
       this.millisecond -= 2000;
       this.setData({
-        timeStr: util.msToStr(this.millisecond),
+        timeStrInt: util.msToStrInt(this.millisecond),
       })
     }
     this.currentRecord.tag = 0;
@@ -151,7 +152,8 @@ Page({
   reset() {
     this.millisecond = 0;
     this.setData({
-      timeStr: "00.000",
+      timeStrInt: "0",
+      timeStrDot: "000",
       state: "init"
     })
   },
@@ -159,7 +161,8 @@ Page({
     this.millisecond += Date.now() - this.lastTime;
     this.lastTime = Date.now();
     this.setData({
-      timeStr: util.msToStr(this.millisecond)
+      timeStrInt: util.msToStrInt(this.millisecond),
+      timeStrDot: util.msToStrDot(this.millisecond)
     })
   }
 })

@@ -25,12 +25,25 @@ function msToStr(ms) {
   let minute = Math.floor(ms / 60000)
   ms = ms % 60000
   let str = (ms / 1000).toFixed(3)
-  if (ms < 10000) str = "0" + str
   if (minute > 0) str = minute + ":" + str
   return str
+}
+
+function msToStrInt(ms) {
+  let minute = Math.floor(ms / 60000)
+  ms = ms % 60000
+  let str = (ms / 1000).toFixed(0)
+  if (minute > 0) str = minute + ":" + str
+  return str
+}
+
+function msToStrDot(ms) {
+  return (ms % 1000 / 1000).toFixed(3).substr(2)
 }
 module.exports = {
   formatTime,
   formatShortTime,
-  msToStr
+  msToStr,
+  msToStrInt,
+  msToStrDot
 }

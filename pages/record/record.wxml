@@ -12,7 +12,7 @@
         {{item.method}}
       </view>
       <view class="item-time">
-        {{item.time}} <text class="tag">{{item.tag}}</text>
+        {{item.timeStrInt}}.<text class="time-dot">{{item.timeStrDot}}</text><text class="tag">{{item.tag}}</text>
       </view>
     </view>
   </view>

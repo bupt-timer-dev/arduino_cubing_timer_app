@@ -18,13 +18,16 @@
 .tag {
   color: red;
   font-size: 1rem;
-  text-align: center;
 }
 
 .time-digits {
   margin-top: 50%;
   text-align: center;
   font-size: 320%;
+}
+
+.time-dot {
+  font-size: 80%;
 }
 
 .hint {

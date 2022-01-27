@@ -30,7 +30,8 @@ Page({
       map((i) => ({
         type: defs.typeName[i.type],
         method: defs.methodName[i.method],
-        time: util.msToStr(i.time),
+        timeStrInt: util.msToStrInt(i.time),
+        timeStrDot: util.msToStrDot(i.time),
         startTime: util.formatShortTime(new Date(i.startTime)),
         tag: defs.tagName[i.tag]
       })).reverse()
