@@ -5,6 +5,9 @@
     "pages/comm/comm",
     "pages/my/my"
   ],
+  "usingComponents": {
+    "selector": "components/selector/selector"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -12,8 +15,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页"
       },

@@ -7,27 +7,18 @@ const util = require("../../utils/util")
 Page({
   millisecond: 0,
   lastTime: null,
+  typeIndex: null,
+  methodIndex: null,
   data: {
     state: "init", // init/run/stop/tagged
     timeStr: "00.000",
-    tag: "",
-    typeRange: defs.typeName,
-    typeIndex: 1,
-    showTypeSelector: false,
-    methodRange: defs.methodName,
-    methodIndex: 0,
+    tag: ""
   },
-  selectType(e) {
-    this.setData({
-      showTypeSelector: false,
-      typeIndex: e.target.id
-    })
+  selectorChange(e) {
+    this.typeIndex = e.detail.typeIndex;
+    this.methodIndex = e.detail.methodIndex;
+    console.log(e);
     this.reset();
-  },
-  tapType() {
-    this.setData({
-      showTypeSelector: true
-    })
   },
   addDnf() {
     records.pop();
@@ -75,7 +66,7 @@ Page({
   },
   start() {
     this.currentRecord = {
-      type: this.data.typeIndex,
+      type: this.typeIndex,
       method: 0,
       startTime: Date.now(),
       tag: 0
