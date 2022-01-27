@@ -17,12 +17,12 @@ Page({
   },
 
   onShow: function () {
-    this.loadRecords();
     let data = preference.load();
     this.setData({
       typeIndex: data.type,
       methodIndex: data.method
     })
+    this.loadRecords();
   },
   loadRecords() {
     this.setData({
