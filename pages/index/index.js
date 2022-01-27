@@ -21,13 +21,13 @@ Page({
   onShow() {
     let data = preference.load();
     this.setData({
-      typeIndex: data.index,
+      typeIndex: data.type,
       methodIndex: data.method
     })
   },
   selectType(e) {
     this.setData({
-      typeIndex: e.detail.index
+      typeIndex: Number(e.detail.index)
     })
     this.savePreference();
     this.reset();

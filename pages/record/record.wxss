@@ -1,4 +1,9 @@
 /* pages/record/record.wxss */
+.header {
+  display: flex;
+  margin: 5px;
+}
+
 .list-item {
   display: flex;
   align-items: center;

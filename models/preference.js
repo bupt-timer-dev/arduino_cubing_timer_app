@@ -12,7 +12,7 @@ let preference = {
         type: 1,
         method: 0
       }
-      this.setData(def);
+      this.save(def);
       return def
     }
   },

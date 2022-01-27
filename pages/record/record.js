@@ -1,6 +1,7 @@
 const records = require("../../models/records")
 const defs = require("../../models/defs")
 const util = require("../../utils/util");
+const preference = require("../../models/preference");
 
 // pages/record/record.js
 Page({
@@ -9,72 +10,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    records: []
+    records: [],
+    typeRange: defs.typeName,
+    typeIndex: 1,
+    showTypeSelector: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    this.loadRecords();
+    let data = preference.load();
     this.setData({
-      records: records.cache.map((i) => {
-        return {
-          type: defs.typeName[i.type],
-          method: defs.methodName[i.method],
-          time: util.msToStr(i.time),
-          startTime: util.formatTime(new Date(i.startTime)),
-          tag: defs.tagName[i.tag]
-        }
-      }).reverse()
+      typeIndex: data.type,
+      methodIndex: data.method
     })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  loadRecords() {
+    this.setData({
+      records: records.cache.filter((i) => i.type == this.data.typeIndex).
+      map((i) => ({
+        type: defs.typeName[i.type],
+        method: defs.methodName[i.method],
+        time: util.msToStr(i.time),
+        startTime: util.formatTime(new Date(i.startTime)),
+        tag: defs.tagName[i.tag]
+      })).reverse()
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  selectType(e) {
+    this.setData({
+      typeIndex: Number(e.detail.index)
+    })
+    this.loadRecords();
+    this.savePreference();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  savePreference() {
+    preference.save({
+      type: this.data.typeIndex,
+      method: preference.load().method
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  tapTypeButton() {
+    this.setData({
+      showTypeSelector: true
+    })
   }
 })
