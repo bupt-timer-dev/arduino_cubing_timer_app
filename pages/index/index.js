@@ -118,6 +118,9 @@ Page({
 
   },
   startTicking() {
+    wx.setKeepScreenOn({
+      keepScreenOn: true
+    })
     this.lastTime = Date.now();
     this.intervalHandle = setInterval(this.tick, 11);
   },
@@ -125,6 +128,9 @@ Page({
     this.tick()
     clearInterval(this.intervalHandle);
     this.intervalHandle = null;
+    wx.setKeepScreenOn({
+      keepScreenOn: false
+    })
   },
   reset() {
     this.millisecond = 0;
