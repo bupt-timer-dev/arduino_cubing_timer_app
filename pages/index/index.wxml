@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <view class="container" bindtap="toggle">
   <view class="header">
-    <button class="header-item" catchtap="void()">
+    <button class="header-item" catchtap="tapType" disabled="{{state=='run'}}">
       <text class="header-item-title">魔方类型</text>
-      <text class="header-item-content">三阶魔方</text>
+      <text class="header-item-content">{{typeRange[typeIndex]}}</text>
     </button>
-    <button class="header-item" catchtap="void()">
+    <button class="header-item" catchtap="void()" disabled="{{state=='run'}}">
       <text class="header-item-title">计时方式</text>
       <text class="header-item-content">软件计时</text>
     </button>
@@ -28,3 +28,10 @@
     </view>
   </view>
 </view>
+<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround">
+  <view class="type-selector">
+    <button wx:for="{{typeRange}}" id="{{index}}" bindtap="selectType">
+      {{item}}
+    </button>
+  </view>
+</page-container>

@@ -10,7 +10,24 @@ Page({
   data: {
     state: "init", // init/run/stop/tagged
     timeStr: "00.000",
-    tag: ""
+    tag: "",
+    typeRange: defs.typeName,
+    typeIndex: 1,
+    showTypeSelector: false,
+    methodRange: defs.methodName,
+    methodIndex: 0,
+  },
+  selectType(e) {
+    this.setData({
+      showTypeSelector: false,
+      typeIndex: e.target.id
+    })
+    this.reset();
+  },
+  tapType() {
+    this.setData({
+      showTypeSelector: true
+    })
   },
   addDnf() {
     records.pop();
@@ -58,7 +75,7 @@ Page({
   },
   start() {
     this.currentRecord = {
-      type: 0,
+      type: this.data.typeIndex,
       method: 0,
       startTime: Date.now(),
       tag: 0
