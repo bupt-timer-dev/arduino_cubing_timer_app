@@ -24,7 +24,7 @@ Component({
         show: false,
       })
       this.triggerEvent("select", {
-        index: e.target.id,
+        index: Number(e.target.id),
       })
     },
     tapType() {

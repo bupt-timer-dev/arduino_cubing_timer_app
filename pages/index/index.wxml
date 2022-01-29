@@ -1,5 +1,3 @@
-<!--index.wxml-->
-<selector show="{{showTypeSelector}}" bindselect="selectType"></selector>
 <view class="container" bindtap="toggle">
   <view class="header">
     <titled-button title="魔方类型" text="{{typeRange[typeIndex]}}" disabled="{{state=='run'}}" catchtap="tapTypeButton"></titled-button>
@@ -24,10 +22,4 @@
     </view>
   </view>
 </view>
-<page-container round="true" position="top" show="{{showTypeSelector}}" bindenter="workaround" bindleave="">
-  <view class="type-selector">
-    <button wx:for="{{typeRange}}" id="{{index}}" bindtap="selectType">
-      {{item}}
-    </button>
-  </view>
-</page-container>
+<selector show="{{showTypeSelector}}" bindselect="selectType"></selector>

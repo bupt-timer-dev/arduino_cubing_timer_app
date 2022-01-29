@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/record/record",
     "pages/comm/comm",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/recordDetail/recordDetail"
   ],
   "usingComponents": {
     "titled-button": "components/titledButton/titledButton",
@@ -16,7 +17,8 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页"
       },

@@ -13,7 +13,9 @@ Page({
     records: [],
     typeRange: defs.typeName,
     typeIndex: 1,
-    showTypeSelector: false
+    showTypeSelector: false,
+    showDetail: false,
+    detail: null
   },
 
   onShow: function () {
@@ -24,17 +26,38 @@ Page({
     })
     this.loadRecords();
   },
-  loadRecords() {
+  tapRecord(e) {
+    let i = records.cache[Number(e.target.id)];
+    let o = {
+
+    }
     this.setData({
-      records: records.cache.filter((i) => i.type == this.data.typeIndex).
-      map((i) => ({
-        type: defs.typeName[i.type],
-        method: defs.methodName[i.method],
-        timeStrInt: util.msToStrInt(i.time),
-        timeStrDot: util.msToStrDot(i.time),
-        startTime: util.formatShortTime(new Date(i.startTime)),
-        tag: defs.tagName[i.tag]
-      })).reverse()
+      showDetail: true,
+      detail: o
+    })
+  },
+  loadRecords() {
+    let o = [];
+    let number = 0;
+    for (let idx in records.cache) {
+      let i = records.cache[idx];
+      number++;
+      if (i.type == this.data.typeIndex) {
+        o.push({
+          id: idx,
+          number: number,
+          type: defs.typeName[i.type],
+          method: defs.methodName[i.method],
+          timeStrInt: util.msToStrInt(i.time),
+          timeStrDot: util.msToStrDot(i.time),
+          startTime: util.formatShortTime(new Date(i.startTime)),
+          tag: defs.tagName[i.tag]
+        })
+      }
+    }
+    o.reverse();
+    this.setData({
+      records: o
     })
   },
   selectType(e) {

@@ -25,6 +25,10 @@ Page({
       typeIndex: data.type,
       methodIndex: data.method
     })
+    if (app.globalData.resetIndex) {
+      this.reset();
+      app.globalData.resetIndex = false;
+    }
   },
   selectType(e) {
     this.setData({

@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="title">记录详情</view>
+  <view class="content">
+    <view>{{detail.type}}中的第{{detail.number}}条记录 <text style="font-size: 0.5rem;">id:{{detail.id}}</text></view>
+    <view>魔方类型: {{detail.type}}</view>
+    <view>计时方式: {{detail.method}}</view>
+    <view>开始时间: {{detail.startTime}}</view>
+    <view>用时: {{detail.timeStr}}</view>
+    <view>标签: {{detail.tag}}</view>
+  </view>
+  <button type="warn" bindtap="del">删除记录</button>
+</view>
