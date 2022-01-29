@@ -158,7 +158,8 @@ Page({
     this.setData({
       timeStrInt: "0",
       timeStrDot: "000",
-      state: "init"
+      state: "init",
+      tag: defs.tagName[0]
     })
   },
   tick() {
