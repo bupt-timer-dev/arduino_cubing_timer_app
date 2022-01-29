@@ -29,8 +29,8 @@ Page({
     let number = 0;
     for (let idx in records.cache) {
       let i = records.cache[idx];
-      number++;
       if (i.type == this.data.typeIndex) {
+        number++;
         o.push({
           id: idx,
           number: number,
