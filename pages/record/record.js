@@ -13,9 +13,7 @@ Page({
     records: [],
     typeRange: defs.typeName,
     typeIndex: 1,
-    showTypeSelector: false,
-    showDetail: false,
-    detail: null
+    showTypeSelector: false
   },
 
   onShow: function () {
@@ -25,16 +23,6 @@ Page({
       methodIndex: data.method
     })
     this.loadRecords();
-  },
-  tapRecord(e) {
-    let i = records.cache[Number(e.target.id)];
-    let o = {
-
-    }
-    this.setData({
-      showDetail: true,
-      detail: o
-    })
   },
   loadRecords() {
     let o = [];
